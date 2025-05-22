@@ -1,0 +1,273 @@
+/* /// BASE STYLES /// */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Use chosen font */
+    background-color: #1a1a2e; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+    position: relative; /* For positioning background shapes */
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 3.5rem; /* Large heading */
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px; /* Space below section titles */
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #ffffff; /* Slightly brighter for subheadings */
+}
+
+p {
+    font-size: 1rem;
+    color: #c0c0c0; /* Slightly dimmer text for paragraphs */
+}
+
+a {
+    color: #8A2BE2; /* Example Accent - use gradient or primary */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* /// GRADIENT TEXT /// */
+.gradient-text {
+    background: linear-gradient(90deg, #00F2FE, #4C4AF4); /* Example Teal to Purple */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* /// BUTTONS /// */
+.cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(90deg, #00F2FE, #4C4AF4); /* Use Gradient */
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Remove default border */
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2); /* Glow effect on hover */
+    text-decoration: none;
+}
+
+.cta-button.large {
+    padding: 18px 45px;
+    font-size: 1.2rem;
+}
+
+/* /// HERO SECTION /// */
+.hero {
+    padding: 120px 0 100px 0; /* More padding top */
+    text-align: center;
+    position: relative; /* Needed for pseudo-elements or bg shapes */
+    overflow: hidden; /* Contain shapes */
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #d0d0d0;
+}
+
+/* Optional: Add abstract background shapes/gradients here */
+.hero-bg-shape {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.1) 0%, rgba(0, 242, 254, 0) 70%);
+    border-radius: 50%;
+    z-index: -1; /* Behind content */
+}
+
+
+/* /// WHY SELL SECTION /// */
+.why-sell {
+    background-color: #212136; /* Slightly different background */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 40px;
+}
+
+.feature-item {
+    background-color: #1a1a2e; /* Back to main dark bg */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #33334F; /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    /* Style the icon color - maybe use the gradient */
+    background: linear-gradient(90deg, #00F2FE, #4C4AF4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* /// HOW IT WORKS SECTION /// */
+.steps-container {
+    max-width: 800px; /* Center the steps */
+    margin: 0 auto;
+    position: relative; /* For potential connecting lines */
+}
+
+/* Optional: Add a visual connector line */
+.steps-container::before {
+    content: '';
+    position: absolute;
+    left: 30px; /* Adjust based on step-number size */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #00F2FE, #4C4AF4); /* Gradient line */
+    z-index: 0;
+}
+
+
+.step-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 40px;
+    position: relative; /* For step number positioning */
+    padding-left: 80px; /* Space for the number */
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    top: 0; /* Align with top of text */
+    width: 60px; /* Circle size */
+    height: 60px;
+    background: linear-gradient(135deg, #00F2FE, #4C4AF4); /* Gradient circle */
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Above the line */
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); /* Subtle glow */
+}
+
+.step-content h3 {
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.step-content p {
+     margin-bottom: 0;
+     color: #c0c0c0;
+}
+
+/* /// FINAL CTA SECTION /// */
+.final-cta {
+    text-align: center;
+    background-color: #212136; /* Match why-sell section */
+    overflow: hidden; /* Contain shapes */
+}
+
+.final-cta h2 {
+    margin-bottom: 20px;
+}
+
+.final-cta p {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #d0d0d0;
+    font-size: 1.1rem;
+}
+
+/* Optional: Add another abstract background shape */
+.cta-bg-shape {
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(76, 74, 244, 0.1) 0%, rgba(76, 74, 244, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* /// FOOTER /// */
+footer {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid #33334F; /* Subtle separator */
+}
+
+footer a {
+    color: #aaa;
+}
+
+footer a:hover {
+    color: #00F2FE; /* Accent color on hover */
+}
+
+
+/* /// RESPONSIVE ADJUSTMENTS (Example) /// */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+    .hero { padding: 80px 0 60px 0; }
+    section { padding: 60px 0; }
+    .features-grid { grid-template-columns: 1fr; } /* Stack features */
+
+    .steps-container::before { left: 20px; } /* Adjust line position */
+    .step-item { padding-left: 60px; }
+    .step-number { width: 40px; height: 40px; font-size: 1.2rem; }
+}

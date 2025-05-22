@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Pre-Built Websites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css"> <!-- Navbar styles -->
+    <link rel="stylesheet" href="css/browse.css"> <!-- Page specific styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Added for consistency if any icons are used by nav/footer in future -->
+</head>
+<body>
+    <div class="navbar-wrapper-container">
+        <header>
+            <a href="index.html" class="logo-link"><div class="logo">Sitezy</div></a>
+            <nav>
+                <ul class="nav-links" id="nav-links-list">
+                    <li><a href="browse.html">Browse</a></li>
+                    <li><a href="sell.html">Sell</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <a href="contact us.html">Contact Us</a>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links-list">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <a href="signin.html" class="sign-in-btn">Sign in</a>
+        </header>
+    </div>
+     
+    <div class="filter-bar">
+        <input type="search" placeholder="Search by keyword...">
+        <select name="category">
+            <option value="all">All Categories</option>
+            <option value="portfolio">Portfolio</option>
+            <option value="blog">Blog</option>
+            <option value="ecommerce">E-commerce</option>
+            <option value="business">Business</option>
+            <option value="travel">Travel</option>
+            <option value="restaurant">Restaurant</option>
+        </select>
+        <select name="sort">
+            <option value="relevance">Sort by: Relevance</option>
+            <option value="newest">Sort by: Newest</option>
+            <option value="price-asc">Sort by: Price (Low to High)</option>
+            <option value="price-desc">Sort by: Price (High to Low)</option>
+        </select>
+    </div>
+
+    <main class="templates-grid">
+        <article class="template-card">
+            <div class="card-image">
+                <!-- For actual images: <img src="https://via.placeholder.com/400x250/FFDAB9/8B4513?text=Travel+Inspiration" alt="Travel Inspiration Blog Preview"> -->
+                <img src="https://placehold.co/600x400/f0e0d0/333333?text=Travel+Blog" alt="Travel Inspiration Blog Preview">
+            </div>
+            <div class="card-content">
+                <h3>Travel Inspiration Blog</h3>
+                <p class="description">Share your adventures with this stunning, photo-focused travel blog template. Perfect for wanderlusters.</p>
+                <p class="price">$129</p>
+                <a href="#" class="btn-details">View Details</a>
+            </div>
+        </article>
+
+        <article class="template-card">
+            <div class="card-image">
+                 <img src="https://placehold.co/600x400/d0e0f0/333333?text=Creative+Portfolio" alt="Modern Creative Portfolio Preview">
+            </div>
+            <div class="card-content">
+                <h3>Modern Creative Portfolio</h3>
+                <p class="description">A clean and stylish portfolio template perfect for designers, photographers, and artists to showcase their best work.</p>
+                <p class="price">$149</p>
+                <a href="#" class="btn-details">View Details</a>
+            </div>
+        </article>
+
+        <article class="template-card">
+            <div class="card-image">
+                <img src="https://placehold.co/600x400/e0f0d0/333333?text=Business+Starter" alt="Small Business Starter Preview">
+            </div>
+            <div class="card-content">
+                <h3>Small Business Starter</h3>
+                <p class="description">Professional website template for local businesses, services, or consultants. Get online quickly and easily.</p>
+                <p class="price">$199</p>
+                <a href="#" class="btn-details">View Details</a>
+            </div>
+        </article>
+        
+        <article class="template-card">
+            <div class="card-image">
+                <img src="https://placehold.co/600x400/f0d0e0/333333?text=E-commerce+Shop" alt="E-commerce Shop Preview">
+            </div>
+            <div class="card-content">
+                <h3>Sleek E-commerce Shop</h3>
+                <p class="description">Start selling online with this beautifully designed e-commerce template. Includes all essential shop features.</p>
+                <p class="price">$249</p>
+                <a href="#" class="btn-details">View Details</a>
+            </div>
+        </article>
+
+        <article class="template-card">
+            <div class="card-image">
+                 <img src="https://placehold.co/600x400/d0f0e0/333333?text=Restaurant+Site" alt="Restaurant Website Preview">
+            </div>
+            <div class="card-content">
+                <h3>Restaurant & Cafe Site</h3>
+                <p class="description">Elegant template for restaurants, cafes, or bars. Showcase your menu, location, and take reservations.</p>
+                <p class="price">$179</p>
+                <a href="#" class="btn-details">View Details</a>
+            </div>
+        </article>
+
+        <article class="template-card">
+            <div class="card-image">
+                <img src="https://placehold.co/600x400/e0d0f0/333333?text=Landing+Page" alt="Product Landing Page Preview">
+            </div>
+            <div class="card-content">
+                <h3>Product Landing Page</h3>
+                <p class="description">High-converting landing page template designed to showcase a single product or service effectively.</p>
+                <p class="price">$99</p>
+                <a href="#" class="btn-details">View Details</a>
+            </div>
+        </article>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>Sitezy</h2>
+                    <p>Building websites made effortless. Drag. Drop. Done.</p>
+                </div>
+                <nav class="footer-nav">
+                    <div class="footer-column">
+                        <h3>Explore</h3>
+                        <ul>
+                            <li><a href="#">websites</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li>
+                                <a href="mailto:support@sitezy.com">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>support<br>@sitezy.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+1234567890">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>+1 234 567 890</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Sitezy.com — All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

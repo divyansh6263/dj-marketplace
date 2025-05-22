@@ -1,0 +1,952 @@
+/* Basic Reset & Body Styles */
+/* ... (Keep all styles from the start down to .decor-blob) ... */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #fdfaf5;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Added for browse.html navbar wrapper, ensuring no conflict with browse.css's .container */
+.navbar-wrapper-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    margin-bottom: 40px;
+  
+    border-radius: 0 0 20px 20px;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #000;
+    /* Ensure logo doesn't get pushed by long nav on medium screens */
+    flex-shrink: 0;
+}
+
+nav {
+    /* Allow nav to take available space but not push others aggressively */
+    flex-grow: 1;
+    display: flex; /* Keep nav itself as flex */
+    justify-content: center; /* Center the ul within the nav */
+    margin: 0 20px; /* Add some space around the nav */
+    
+}
+
+nav ul.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center; /* Vertically align items */
+}
+
+nav a {
+   
+    text-decoration: none;
+    color: #4b5563; /* Header link color */
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.sign-in-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568;
+    border: 1px solid #d2d6dc;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0; /* Prevent button shrinking */
+}
+
+.sign-in-btn:hover {
+    background-color: #f7fafc;
+    border-color: #a0aec0;
+    color: #2d3748;
+}
+
+/* Hamburger Menu Button Styles (Hidden by default) */
+.menu-toggle {
+    display: none; /* Hidden on desktop/tablet */
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 15;
+    order: 2; /* Default order for flex layout */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section Styles */
+/* ... (Keep hero styles: .hero, .hero-content, h1, p, .cta-buttons, .btn, .browse-btn, .seller-btn) ... */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    min-height: calc(80vh - 100px);
+    padding-bottom: 80px;
+}
+
+.hero-content {
+    flex: 1 1 50%;
+    max-width: 520px;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 35px;
+    max-width: 450px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.browse-btn {
+    background-color: #f97316;
+    color: white;
+}
+
+.seller-btn {
+    background-color: #fffbeb;
+    color: #4a5568;
+    border: 1px solid #fef3c7;
+}
+
+/* Hero Images Styles */
+/* ... (Keep hero image styles: .hero-images, .preview-img, .img-1, .img-2, .img-3) ... */
+.hero-images {
+    flex: 1 1 50%;
+    position: relative;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-img {
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    width: clamp(280px, 25vw, 150px);
+    transition: transform 0.3s ease-out;
+}
+
+.preview-img:hover {
+    transform: scale(1.05) rotate(var(--hover-rotate, 0deg));
+    z-index: 10;
+}
+
+.img-1 { top: 0; left: 17%; transform: rotate(-05deg); z-index: 1; --hover-rotate: -5deg; }
+.img-2 { top: 100px; left: 42%; transform: rotate(15deg); z-index: 3; --hover-rotate: 17deg; }
+.img-3 { top: 150px; left: 2%; transform: rotate(-20deg); z-index: 2; --hover-rotate: -18deg; }
+
+/* Decorative Background Elements */
+/* ... (Keep decor styles: .decor-circle-1, .decor-circle-2, .decor-swoop, .decor-blob) ... */
+.decor-circle-1 { width: 100px; height: 100px; background-color: #fcd34d; border-radius: 50%; top: 100px; left: 60px; position: absolute; z-index: 0; pointer-events: none;}
+.decor-circle-2 { width: 60px; height: 60px; background-color: #f9a8d4; border-radius: 50%; top: 180px; left: 130px; position: absolute; z-index: 0; pointer-events: none;}
+.decor-swoop { width: 150%; height: 600px; background: linear-gradient(145deg, rgba(96, 165, 250, 0.4), rgba(167, 139, 250, 0.2)); border-radius: 50%; top: 450px; left: -25%; transform: rotate(-12deg); opacity: 0.8; position: absolute; z-index: 0; pointer-events: none;}
+.decor-blob { width: 120px; height: 60px; background-color: #fcd34d; border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%; bottom: 60px; right: 80px; transform: rotate(15deg); position: absolute; z-index: 0; pointer-events: none;}
+
+
+/* ================================== */
+/* RESPONSIVE STYLES START HERE       */
+/* ================================== */
+
+/* Tablet Styles (Larger tablets down to 600px) */
+@media (max-width: 992px) {
+    .container, .navbar-wrapper-container { /* Apply to both .container and .navbar-wrapper-container */
+        padding: 0 25px;
+    }
+
+    .hero {
+        gap: 40px;
+        padding-bottom: 60px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.05rem;
+    }
+
+    nav ul.nav-links {
+        gap: 25px; /* Reduce nav gap */
+    }
+
+    .preview-img {
+         width: clamp(240px, 28vw, 320px);
+    }
+    .img-1 { left: 10%; top: 10px;}
+    .img-2 { left: 38%; top: 140px; }
+    .img-3 { left: 2%; top: 280px; }
+
+    .hero-images {
+        min-height: 500px;
+    }
+
+    /* Ensure toggle is hidden and nav links shown */
+    .menu-toggle { display: none; }
+    nav { display: flex; } /* Ensure nav container is visible */
+    nav ul.nav-links { display: flex; } /* Ensure links list is visible */
+}
+
+/* Mobile Styles (Below 600px) - Nav Toggle Active */
+@media (max-width: 599.98px) { /* Changed breakpoint */
+    header {
+        padding: 15px 0;
+        margin-bottom: 30px;
+    }
+
+    /* Hide original navigation */
+    nav {
+        display: none; /* Hide the nav container */
+        order: initial; /* Reset order from potential flex settings */
+    }
+
+    /* Show and style the hamburger button */
+    .menu-toggle {
+        display: block; /* Show the button on mobile */
+        order: 2; /* Position between logo (1) and sign-in (3) */
+    }
+
+    .logo {
+       order: 1; /* Logo first */
+    }
+
+    .sign-in-btn {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+        order: 3; /* Sign in last */
+    }
+
+    /* --- Other Mobile Styles (Stacking, Font Sizes, etc.) --- */
+
+    .container, .navbar-wrapper-container { /* Apply to both .container and .navbar-wrapper-container */
+        padding: 0 20px; /* Further reduce padding */
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        min-height: auto;
+        padding-bottom: 50px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        order: 1;
+        flex-basis: auto;
+    }
+
+     .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+     }
+     .hero-content p {
+         font-size: 1rem;
+         max-width: 90%;
+         margin-left: auto;
+         margin-right: auto;
+         margin-bottom: 30px;
+     }
+
+    .cta-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .btn {
+        width: 80%;
+        max-width: 300px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .hero-images {
+        order: 2;
+        min-height: auto;
+        width: 100%;
+        margin-top: 20px;
+        flex-basis: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        position: static; /* Reset relative if it causes issues */
+    }
+
+    .preview-img {
+        position: static; /* Remove absolute positioning */
+        transform: none !important; /* Remove rotation */
+        width: 85%;
+        max-width: 350px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        --hover-rotate: 0deg; /* Disable hover rotation */
+    }
+
+     .preview-img:hover {
+        transform: scale(1.03) !important; /* Smaller hover effect */
+    }
+
+    /* Adjust decorative elements */
+    .decor-circle-1 { top: 60px; left: 15px; width: 70px; height: 70px;}
+    .decor-circle-2 { top: 110px; left: 60px; width: 40px; height: 40px;}
+    .decor-swoop { bottom: -450px; opacity: 0.4; height: 500px; }
+    .decor-blob { display: none; }
+}
+
+/* Optional: Fine-tuning for very small screens */
+@media (max-width: 400px) {
+    .container, .navbar-wrapper-container { /* Apply to both .container and .navbar-wrapper-container */
+        padding: 0 15px;
+    }
+    .hero-content h1 {
+        font-size: 2.1rem;
+    }
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+    .btn {
+        width: 90%;
+    }
+}
+
+/* Styles for OPEN menu (Needs JS to add 'nav-active' class to body/header) */
+/* ... (Keep the commented-out example styles for the open menu state) ... */
+/*
+body.nav-active .nav-links {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+body.nav-active .menu-toggle .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+body.nav-active .menu-toggle .bar:nth-child(2) { opacity: 0; }
+body.nav-active .menu-toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+*/
+.scta-button {
+    display: inline-block;
+    background-color: #5EEAD4; /* Teal color */
+    color: #115E59; /* Darker teal text */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(94, 234, 212, 0.3);
+}
+
+.scta-button:hover {
+    background-color: #34D399; /* Slightly darker teal on hover */
+    transform: translateY(-2px);
+}
+
+/* below-home Section */
+.below-home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    min-height: 70vh;
+    background-color:  #fdfaf5; /* Slightly different white for contrast */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Gap between text and image */
+}
+
+.below-home-content {
+    flex-basis: 45%; /* Takes slightly less than half */
+    max-width: 550px;
+}
+
+.below-home-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2em;
+}
+.below-home-content h1 {
+    font-size: 3rem;
+    
+   
+}
+
+.below-home-image {
+    flex-basis: 45%; /* Takes slightly less than half */
+    text-align: center; /* Center image if it's smaller */
+}
+.smiling-lady{
+    height: 400px;
+    width: 280px;
+    z-index: 1;
+    margin-left: 50px;
+}
+.below-home-image img {
+    border-radius: 10px; /* Optional: slight rounding */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 5%;
+    gap: 30px; /* Space between cards */
+    flex-wrap: wrap; /* Allow cards to wrap */
+    background-color:  #fdfaf5;
+}
+
+.feature-card {
+    background-color: #fff;
+    padding: 40px 30px; /* Increased padding for bigger feel */
+    border-radius: 12px;
+    text-align: center;
+    flex-basis: calc(33.333% - 40px); /* Adjust basis for gap, slightly larger */
+    min-width: 280px; /* Minimum width before wrapping */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border: 1px solid #eee; /* Visible border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.feature-icon {
+    font-size: 2.5rem; /* Larger icons */
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 50%;
+    line-height: 1; /* Ensure icon centered in background */
+}
+
+/* Specific icon background colors */
+.icon-setup { background-color: #FEF3C7; color: #D97706; } /* Yellowish */
+.icon-custom { background-color: #E9D8FD; color: #8B5CF6; } /* Purplish */
+.icon-responsive { background-color: #A7F3D0; color: #059669; } /* Greenish/Teal */
+
+.feature-card h2 {
+    font-size: 1.3rem; /* Adjusted heading size */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* Action Demo Section */
+.action-demo {
+    padding: 60px 5%;
+    text-align: center;
+    background-color: #FDFBFF;
+}
+
+.action-demo h2 {
+     margin-bottom: 30px;
+}
+
+.demo-visual img {
+    max-width: 600px; /* Limit width of the demo image */
+    margin: 0 auto; /* Center the image */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+#ellipse{
+    background-color:  #d9e2f6;
+    text-align: center;
+    color: #000;
+    padding: 100px 0;
+        clip-path: ellipse(75% 100% at center top);
+  }
+.ellipse-heading {
+ font-size: 2rem;
+  }
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 0; /* No horizontal padding, handled by container */
+    background-color: #FAF8FF;
+    overflow: hidden; /* Crucial for carousel */
+}
+
+.testimonial-carousel-container {
+    max-width: 800px; /* Controls the width of the visible area */
+    margin: 0 auto;
+    overflow: hidden; /* Hide the parts of the carousel strip that are outside */
+    position: relative; /* Needed if adding navigation buttons later */
+}
+
+.testimonial-carousel {
+    display: flex;
+    /* Total width = number of slides * 100% */
+    /* 3 actual slides + 1 duplicate = 4 */
+    width: 400%;
+    /* Animation: name duration timing-function delay iteration-count direction fill-mode play-state */
+    animation: slide 20s linear infinite; /* Adjust duration (20s) for speed */
+}
+
+.testimonial-slide {
+    width: 25%; /* Each slide takes up 1/4 of the total carousel width */
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin: 0 15px; /* Add some space between slides - adjust carousel width & animation if needed */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    border: 1px solid #eee; /* Visible border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0; /* Prevent slides from shrinking */
+}
+
+.reviewer-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover; /* Ensure image covers the circle */
+    border: 3px solid #E9D8FD; /* Subtle border */
+}
+
+.testimonial-slide blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    position: relative;
+    padding: 0 10px; /* Space for quote marks if added */
+}
+
+/* Optional: Add pseudo-element quote marks
+.testimonial-slide blockquote::before,
+.testimonial-slide blockquote::after {
+    content: '"';
+    font-size: 2rem;
+    color: #E9D8FD;
+    position: absolute;
+}
+.testimonial-slide blockquote::before { top: -10px; left: -5px; }
+.testimonial-slide blockquote::after { bottom: -10px; right: -5px; }
+*/
+
+.reviewer-info {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 0;
+}
+
+/* Carousel Animation */
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    /* Pause slightly at each slide if desired - more complex */
+    /* Simple continuous scroll: */
+    100% { transform: translateX(-75%); } /* Move left by the width of 3 slides (since we have 4 total including duplicate) */
+}
+
+/* Pause animation on hover */
+.testimonial-carousel-container:hover .testimonial-carousel {
+    animation-play-state: paused;
+}
+
+
+/* Final scta Footer */
+.final-scta {
+    padding: 80px 5%;
+    text-align: center;
+    background: linear-gradient(135deg, #FAB4B4, #FBCFE8, #C4B5FD); /* Pink/Purple Gradient */
+}
+
+.final-scta h2 {
+    font-size: 2.2rem;
+    color: #4A1D96; /* Dark purple text */
+    margin-bottom: 30px;
+}
+
+/* --- Responsive Design --- */
+
+@media (max-width: 992px) {
+    .below-home {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+    .below-home-content, .below-home-image {
+        flex-basis: 100%;
+        max-width: 600px; /* Limit width when stacked */
+        margin: 0 auto;
+    }
+    .below-home-image {
+        margin-top: 30px;
+    }
+    .features {
+        gap: 20px;
+    }
+    .feature-card {
+        flex-basis: calc(50% - 20px); /* Two cards per row */
+        min-width: 250px;
+    }
+     .testimonial-carousel-container {
+        max-width: 90%; /* Allow more width on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-card {
+        flex-basis: 90%; /* Almost full width */
+        max-width: 400px;
+    }
+    /* Adjust carousel animation for maybe 2 visible slides? Or keep 1 */
+    .testimonial-carousel-container {
+        max-width: 85%; /* Adjust visible area width */
+    }
+    /* Keep carousel showing one slide at a time on mobile */
+    /* No width changes needed for .testimonial-slide if structure kept */
+
+    .final-scta h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+     h1 { font-size: 2rem; }
+     .below-home-content p { font-size: 1rem; }
+     .scta-button { padding: 10px 20px; font-size: 0.9rem;}
+     .feature-card { padding: 30px 20px; }
+     .testimonial-carousel-container {
+        max-width: 90%; /* A bit wider percentage */
+     }
+      .testimonial-slide {
+        padding: 30px 20px;
+        margin: 0 10px;
+     }
+      .testimonial-slide blockquote { font-size: 1rem; }
+     .final-scta { padding: 60px 5%; }
+     .final-scta h2 { font-size: 1.6rem; }
+}
+
+.site-footer {
+    background-color: #ffffff;
+    color: #1a1a1a; /* Slightly darker text for better contrast on white */
+    padding: 40px 30px; /* Generous padding */
+    border-radius: 24px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    max-width: 1100px; /* Max width for the footer content */
+    margin: 50px auto 0; /* Center footer and give some top margin */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Top Section --- */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+    gap: 30px; /* Space between brand and nav columns */
+    margin-bottom: 30px;
+}
+
+.footer-brand {
+    flex: 1; /* Allow it to take available space */
+    min-width: 250px; /* Minimum width before wrapping */
+}
+
+.footer-brand h2 {
+    font-size: 2.8rem; /* Large "Sitezy" text */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0;
+    max-width: 300px; /* Prevent tagline from getting too wide */
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap */
+    gap: 40px; /* Space between Explore, Support, Contact columns */
+    flex: 2; /* Allow nav to take more space if available */
+    justify-content: flex-end; /* Align columns to the right */
+}
+
+.footer-column {
+    min-width: 150px; /* Minimum width for each nav column */
+}
+
+.footer-column h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li:last-child {
+    margin-bottom: 0;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #007bff; /* Example hover color */
+}
+
+/* Contact section specific styling */
+.footer-column ul li a i {
+    margin-right: 10px;
+    font-size: 1.1em; /* Icon size relative to text */
+    color: #333; /* Icon color */
+    vertical-align: middle;
+    width: 20px; /* Ensure icons align well */
+    text-align: center;
+}
+.footer-column ul li a span {
+    vertical-align: middle;
+}
+.footer-column ul li a[href^="mailto:"],
+.footer-column ul li a[href^="tel:"] {
+    display: flex; /* For aligning icon and multi-line text */
+    align-items: flex-start; /* Align icon to top of text */
+}
+
+
+/* --- Divider --- */
+.footer-divider {
+    border: 0;
+    border-top: 1px solid #e0e0e0; /* Light grey divider */
+    margin: 20px 0; /* Space around divider */
+}
+
+/* --- Bottom Section --- */
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Space between copyright and socials if they wrap */
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.copyright {
+    margin: 0;
+}
+
+.social-icons a {
+    color: #555;
+    font-size: 1.2rem; /* Icon size */
+    margin-left: 18px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.social-icons a:first-child {
+    margin-left: 0;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Example hover color */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .footer-top {
+        flex-direction: column; /* Stack brand above nav */
+        align-items: flex-start; /* Align items to start */
+    }
+    .footer-nav {
+        justify-content: flex-start; /* Align nav columns to the start */
+        width: 100%; /* Take full width */
+        margin-top: 20px;
+    }
+    .footer-brand h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+    .footer-nav {
+        gap: 25px; /* Reduce gap between columns */
+    }
+    .footer-column {
+        min-width: 130px; /* Adjust min-width */
+    }
+     .footer-brand h2 {
+        font-size: 2.2rem;
+    }
+    .footer-brand p {
+        font-size: 0.9rem;
+    }
+     .footer-column h3 {
+        font-size: 1rem;
+    }
+    .footer-column ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-nav {
+        flex-direction: column; /* Stack nav columns vertically */
+        gap: 20px;
+    }
+    .footer-column {
+        min-width: 100%; /* Each nav column takes full width */
+    }
+    .footer-bottom {
+        flex-direction: column; /* Stack copyright and socials */
+        align-items: center; /* Center items */
+        text-align: center;
+    }
+    .social-icons {
+        margin-top: 15px;
+    }
+    .social-icons a {
+        margin: 0 10px; /* Adjust social icon spacing */
+    }
+    .footer-brand h2 {
+        font-size: 2rem;
+    }
+}

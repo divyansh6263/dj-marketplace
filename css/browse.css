@@ -1,0 +1,246 @@
+ :root {
+            --primary-color: #FF6B00; /* A vibrant orange */
+            --primary-hover-color: #E65C00;
+            --secondary-color: #4A4A4A; /* Dark gray for text */
+            --light-gray: #F4F4F4;
+            --background-start: #fdf0f3; /* Lighter pinkish */
+            --background-end: #e8eaff; /* Lighter bluish */
+            --card-background: #FFFFFF;
+            --border-color: #E0E0E0;
+            --font-family: 'Poppins', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+            --shadow-md: 0 5px 15px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--secondary-color);
+            background-image: linear-gradient(120deg, var(--background-start), var(--background-end));
+            padding: 0 20px; /* Padding for the main content area, navbar is outside this or handles its own */
+            min-height: 100vh;
+        }
+        
+        /* This .container is specific to browse.html content if used,
+           navbar uses .navbar-wrapper-container from index.css */
+        .container { 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+   /* Removed conflicting/redundant header styles from here as they are now in index.css */
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            background-color: var(--card-background);
+            padding: 20px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 50px;
+            /* Ensure filter bar is within page flow and respects body padding if not inside another container */
+            max-width: 1280px; /* Match typical content width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .filter-bar input[type="search"],
+        .filter-bar select {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            background-color: #fff;
+        }
+
+        .filter-bar input[type="search"] {
+            flex-grow: 1;
+            min-width: 200px; /* Ensure it doesn't get too small */
+        }
+        
+        .filter-bar select {
+            min-width: 180px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234A4A4A' width='18px' height='18px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        
+        .filter-bar input[type="search"]:focus,
+        .filter-bar select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.2);
+        }
+
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            /* Ensure templates grid is within page flow and respects body padding if not inside another container */
+            max-width: 1280px; /* Match typical content width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .template-card {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .template-card .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: var(--light-gray); /* Placeholder bg */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #888;
+            /* For actual images: */
+            /* background-size: cover; */
+            /* background-position: center; */
+        }
+        .template-card .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .template-card .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .template-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .template-card .description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Pushes price and button down */
+        }
+
+        .template-card .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .template-card .btn-details {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            align-self: flex-start; /* Align button to the start */
+        }
+
+        .template-card .btn-details:hover {
+            background-color: var(--primary-hover-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 2.2rem;
+            }
+            .section-header p {
+                font-size: 1rem;
+            }
+            .filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .filter-bar input[type="search"],
+            .filter-bar select {
+                width: 100%;
+            }
+            .templates-grid {
+                grid-template-columns: 1fr; /* Stack cards */
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px; /* Reduced body padding for small screens */
+            }
+            /* Navbar wrapper needs to adapt to less body padding */
+            .navbar-wrapper-container { /* This style for navbar-wrapper-container is best placed in index.css with other media queries */
+                 /* padding-left: 10px; */ /* Or adjust its padding directly if needed on small screens */
+                 /* padding-right: 10px; */
+            }
+
+            .filter-bar, .templates-grid {
+                /* Adjust padding/margin if body padding changes significantly affect them */
+            }
+
+            .section-header h1 {
+                font-size: 1.8rem;
+            }
+            .section-header p {
+                font-size: 0.9rem;
+            }
+            .filter-bar {
+                padding: 15px;
+            }
+            .template-card .card-content {
+                padding: 20px;
+            }
+            .template-card h3 {
+                font-size: 1.2rem;
+            }
+        }

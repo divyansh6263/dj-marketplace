@@ -1,0 +1,423 @@
+/* sell.css - Unique and Aesthetic Styles for the Sell Page */
+
+/* Import Playfair Display for specific headings if not globally available */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+/* General Sell Page Styles */
+body {
+    /* Background from index.css is fine, or override here if needed */
+    /* font-family: 'Poppins', Arial, sans-serif; -- from index.css */
+}
+
+.sell-page-container {
+    /* This main wrapper is for content below the header */
+    /* No specific styles needed if sections handle their own padding/margins */
+}
+
+/* Active Nav Link for Sell Page */
+.sp-active-nav {
+    color: #f97316 !important; /* Orange color from index.css for active state */
+    font-weight: 700 !important;
+    position: relative;
+}
+.sp-active-nav::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background-color: #f97316;
+    border-radius: 2px;
+}
+
+
+/* Hero Section - Vision Style */
+.sp-hero-vision {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+    /* Replace with a high-quality, relevant background image */
+    color: #fff;
+}
+
+.sp-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 32, 44, 0.7); /* Dark overlay for text contrast */
+    z-index: 1;
+}
+
+.sp-hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.sp-main-headline {
+    font-family: 'Playfair Display', serif; /* More elegant headline font */
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.sp-sub-headline {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    opacity: 0.9;
+}
+
+.sp-hero-cta {
+    /* .btn .browse-btn styles from index.css */
+    padding: 16px 45px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3); /* Orange glow */
+    transition: all 0.3s ease;
+}
+.sp-hero-cta:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+}
+
+
+/* Common Title Style for Sections */
+.sp-common-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #1a202c; /* Dark primary text */
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 60px;
+}
+.sp-highlight-text {
+    color: #059669; /* A rich green for highlight */
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* Value Proposition Section */
+.sp-value-prop-section {
+    padding-bottom: 60px;
+    background-color: #fdfaf5; /* Light bg from index */
+    margin-top: -1px; /* Ensure no gap if hero has bottom margin */
+}
+
+.sp-value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.sp-value-card {
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #eef2f7;
+    box-shadow: 0 8px 25px rgba(50, 71, 92, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sp-value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(50, 71, 92, 0.12);
+}
+
+.sp-value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #E0F2F7; /* Light teal/blue */
+    color: #0A4D68; /* Darker teal/blue */
+    line-height: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.sp-value-card:hover .sp-value-icon {
+    background-color: #0A4D68;
+    color: #E0F2F7;
+}
+
+.sp-value-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.sp-value-desc {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+
+/* How It Works - Journey/Timeline Section */
+.sp-how-it-works-journey {
+    padding-bottom: 80px;
+    background-color: #0A4D68; /* Deep Teal/Blue Background */
+    color: #f0f8ff; /* Alice blue - light text for contrast */
+}
+.sp-how-it-works-journey .sp-common-title {
+    color: #fff; /* White title on dark background */
+    margin-bottom: 60px;
+}
+.sp-treasure-accent {
+    font-family: 'Playfair Display', serif;
+    color: #FCD34D; /* Gold color from index.css for "treasure" */
+    /* text-shadow: 0 0 10px rgba(252, 211, 77, 0.5); */
+}
+
+.sp-journey-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* The central "path" line */
+.sp-journey-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px; /* Aligns with the center of markers */
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: rgba(252, 211, 77, 0.4); /* Semi-transparent gold */
+    border-radius: 2px;
+    z-index: 0;
+}
+
+.sp-journey-step {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding: 20px 0 20px 80px; /* Space for marker and line */
+    margin-bottom: 20px;
+}
+.sp-journey-step:last-child {
+    margin-bottom: 0;
+}
+
+.sp-step-marker {
+    width: 80px; /* Increased size for visual impact */
+    height: 80px;
+    background-color: #FCD34D; /* Gold */
+    color: #0A4D68; /* Dark text on gold */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem; /* Icon size */
+    position: absolute;
+    left: 0; /* Align to the start of the padding */
+    top: 15px; /* Adjust vertical alignment */
+    border: 4px solid #083b53; /* Darker border for depth */
+    box-shadow: 0 0 15px rgba(252, 211, 77, 0.5);
+    z-index: 1;
+}
+
+.sp-step-details {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle background for text box */
+    padding: 25px 30px;
+    border-radius: 8px;
+    flex-grow: 1;
+    margin-left: 20px; /* Space from the marker's edge if not using absolute for marker */
+    border: 1px solid rgba(252, 211, 77, 0.2);
+}
+
+.sp-step-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sp-step-info {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #dbeafe; /* Lighter blue for text */
+    opacity: 0.9;
+}
+
+
+/* Final Call to Action Section */
+.sp-final-call-to-action {
+    padding: 80px 0;
+    background-color: #fdfaf5;
+}
+
+.sp-cta-content-box {
+    background: linear-gradient(135deg, #057358, #0A4D68); /* Green to Blue gradient */
+    color: #fff;
+    padding: 60px 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(10, 77, 104, 0.3);
+}
+
+.sp-cta-main-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.sp-cta-sub-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+    opacity: 0.85;
+}
+
+.sp-final-apply-btn {
+    /* .btn .browse-btn styles from index.css */
+    background-color: #FCD34D; /* Gold button */
+    color: #0A4D68; /* Dark text on gold */
+    padding: 16px 45px;
+    font-size: 1.1rem;
+    border: none;
+}
+.sp-final-apply-btn:hover {
+    background-color: #eab308; /* Darker gold on hover */
+    color: #083b53;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(252, 211, 77, 0.5);
+}
+
+
+/* Responsive Adjustments for Sell Page */
+@media (max-width: 992px) {
+    .sp-main-headline {
+        font-size: 3.2rem;
+    }
+    .sp-sub-headline {
+        font-size: 1.15rem;
+    }
+    .sp-common-title {
+        font-size: 2.2rem;
+    }
+    .sp-cta-main-text {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sp-hero-vision {
+        min-height: 60vh;
+        padding: 60px 20px;
+    }
+    .sp-main-headline {
+        font-size: 2.5rem;
+    }
+    .sp-sub-headline {
+        font-size: 1.05rem;
+    }
+    .sp-common-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        padding-top: 50px;
+    }
+    .sp-value-grid {
+        grid-template-columns: 1fr; /* Stack cards */
+    }
+
+    /* Adjust Journey/Timeline for Mobile */
+    .sp-journey-timeline::before {
+        left: 30px; /* Adjust line position for smaller markers */
+    }
+    .sp-journey-step {
+        padding-left: 60px; /* Reduce padding for smaller markers */
+    }
+    .sp-step-marker {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem; /* Smaller icon */
+        left: 0;
+        top: 20px; /* Adjust top position */
+    }
+    .sp-step-details {
+        padding: 20px;
+        margin-left: 15px;
+    }
+    .sp-step-name {
+        font-size: 1.2rem;
+    }
+    .sp-step-info {
+        font-size: 0.95rem;
+    }
+
+    .sp-cta-main-text {
+        font-size: 2rem;
+    }
+    .sp-cta-sub-text {
+        font-size: 1rem;
+    }
+    .sp-final-apply-btn, .sp-hero-cta {
+        padding: 14px 35px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sp-main-headline {
+        font-size: 2rem;
+    }
+    .sp-sub-headline {
+        font-size: 1rem;
+    }
+    .sp-common-title {
+        font-size: 1.8rem;
+    }
+
+    .sp-journey-timeline::before {
+        left: 25px;
+    }
+    .sp-journey-step {
+        padding-left: 50px; /* Even less padding */
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .sp-step-marker {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        top: 15px;
+    }
+     .sp-step-details {
+        padding: 15px;
+        margin-left: 10px;
+    }
+    .sp-step-name {
+        font-size: 1.1rem;
+    }
+    .sp-step-info {
+        font-size: 0.9rem;
+    }
+
+    .sp-cta-main-text {
+        font-size: 1.7rem;
+    }
+    .sp-final-call-to-action {
+        padding: 60px 0;
+    }
+    .sp-cta-content-box {
+        padding: 40px 25px;
+    }
+}

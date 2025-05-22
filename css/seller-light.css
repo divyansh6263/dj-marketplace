@@ -1,0 +1,275 @@
+/* /// BASE STYLES /// */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Use chosen light font */
+    background-color: #F4F8FF; /* Very light blue background */
+    color: #333333; /* Dark gray text */
+    line-height: 1.7; /* Slightly more line height for airy feel */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #1A202C; /* Darker heading color */
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 3.2rem; /* Slightly smaller than dark theme maybe */
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 60px; /* Space below section titles */
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: #555555; /* Slightly lighter gray for paragraphs */
+    margin-bottom: 1em; /* Default paragraph spacing */
+}
+
+a {
+    color: #4A90E2; /* Accent blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3B82F6; /* Slightly darker blue on hover */
+    text-decoration: none; /* Keep underline off by default */
+}
+
+/* /// HIGHLIGHT TEXT /// */
+.highlight {
+    color: #4A90E2; /* Use accent color for specific words */
+    font-weight: 700;
+}
+
+/* /// BUTTONS /// */
+.cta-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #4A90E2; /* Accent blue */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px; /* Slightly rounded corners */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2); /* Soft shadow matching button color */
+}
+
+.cta-button:hover {
+    background-color: #3B82F6; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(74, 144, 226, 0.3);
+}
+
+.cta-button.large {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+}
+
+/* /// HERO SECTION /// */
+.hero {
+    padding: 100px 0 80px 0;
+    text-align: center;
+    /* background: linear-gradient(180deg, #ffffff 0%, #F4F8FF 100%); /* Optional subtle gradient */
+}
+
+.hero .subtitle {
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    color: #6B7280; /* Lighter gray for subtitle */
+}
+
+/* Optional: Subtle background pattern */
+/* .hero-bg-element { ... } */
+
+/* /// WHY SELL SECTION /// */
+.why-sell {
+    background-color: #FFFFFF; /* White background for contrast */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Slightly smaller gap */
+}
+
+.feature-card {
+    background-color: #FFFFFF;
+    padding: 35px 30px;
+    border-radius: 12px; /* More rounded corners */
+    text-align: center;
+    border: 1px solid #E5E7EB; /* Very light border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card .icon-wrapper {
+    display: inline-flex; /* Helps center icon properly */
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #EBF8FF; /* Light blue circle background */
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.feature-card .icon {
+    font-size: 1.8rem;
+    color: #4A90E2; /* Accent blue icon */
+}
+
+.feature-card h3 {
+    font-size: 1.2rem; /* Slightly smaller card heading */
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #6B7280;
+}
+
+
+/* /// HOW IT WORKS SECTION /// */
+/* Background is the default #F4F8FF */
+.steps-container {
+    max-width: 750px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Optional: Connecting line */
+.steps-container::before {
+    content: '';
+    position: absolute;
+    left: 25px; /* Adjust based on step-number size */
+    top: 10px; /* Start below the first number slightly */
+    bottom: 10px; /* End above the last */
+    width: 2px;
+    background-color: #D1E8FF; /* Lighter blue line */
+    z-index: 0;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 70px; /* Space for the number */
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    top: -5px; /* Align slightly above text */
+    width: 50px;
+    height: 50px;
+    background-color: #4A90E2; /* Accent blue circle */
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Above the line */
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3); /* Subtle shadow */
+}
+
+.step-content h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+    color: #1A202C;
+}
+
+.step-content p {
+     margin-bottom: 0;
+     color: #555555;
+     font-size: 0.95rem;
+}
+
+/* /// FINAL CTA SECTION /// */
+.final-cta {
+    text-align: center;
+    background-color: #FFFFFF; /* White background */
+    /* Optional: Add a subtle top/bottom border or light texture */
+    border-top: 1px solid #E5E7EB;
+}
+
+.final-cta h2 {
+    margin-bottom: 20px;
+}
+
+.final-cta p {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #555555;
+    font-size: 1.1rem;
+}
+
+/* /// FOOTER /// */
+footer {
+    padding: 40px 0; /* More padding */
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888888; /* Lighter footer text */
+    background-color: #F4F8FF; /* Match body background */
+    /* border-top: 1px solid #E5E7EB; /* Subtle separator */
+}
+
+footer a {
+    color: #666666; /* Slightly darker links in footer */
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #4A90E2; /* Accent color on hover */
+}
+
+/* /// RESPONSIVE ADJUSTMENTS (Example) /// */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .hero { padding: 60px 0 40px 0; }
+    section { padding: 60px 0; }
+
+    .features-grid { grid-template-columns: 1fr; gap: 20px; } /* Stack features */
+    .feature-card { padding: 30px 25px; }
+
+    .steps-container::before { left: 20px; } /* Adjust line */
+    .step-item { padding-left: 55px; }
+    .step-number { width: 40px; height: 40px; font-size: 1.2rem; left: 0; }
+}

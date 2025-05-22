@@ -1,0 +1,396 @@
+/* css/support.css */
+
+:root {
+    /* Prefixed CSS Variables for support page specifics */
+    --sup-primary-color: #4A90E2;
+    --sup-secondary-color: #059669;
+    --sup-dark-text: #2d3748;
+    --sup-light-text: #5a6575;
+    --sup-bg-light: #f7fafc;
+    --sup-bg-very-light: #ffffff;
+    --sup-card-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    --sup-input-border: #cbd5e0;
+
+    /* 
+      Ensure --sp-overlay-header-height is defined in index.css or sell.css in :root
+      Example:
+      :root { --sp-overlay-header-height: 80px; } 
+    */
+}
+
+body.sup-page { /* Prefixed body class */
+    font-family: 'Poppins', sans-serif;
+    color: var(--sup-dark-text);
+    line-height: 1.7;
+    background-color: var(--sup-bg-light);
+}
+
+/* --- Hero Section --- */
+.sup-hero { /* Prefixed */
+    background: linear-gradient(135deg, var(--sup-primary-color) 0%, var(--sup-secondary-color) 100%);
+    color: #fff;
+    /* CRITICAL OVERLAP FIX: Adjust padding-top based on your actual header height */
+    padding-top: calc(var(--sp-overlay-header-height, 80px) + 60px); 
+    padding-bottom: 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sup-hero .container { /* Uses global .container from index.css */
+    position: relative;
+    z-index: 2;
+}
+
+.sup-hero-bg-shape { /* Prefixed */
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    background-color: #fff;
+    animation: supFloatShape 20s infinite ease-in-out alternate; /* Prefixed animation name */
+}
+
+.sup-hero-bg-shape.sup-shape1 { width: 250px; height: 250px; top: 10%; left: 5%; animation-duration: 22s;}
+.sup-hero-bg-shape.sup-shape2 { width: 150px; height: 150px; top: 60%; left: 20%; animation-duration: 18s; animation-delay: -5s;}
+.sup-hero-bg-shape.sup-shape3 { width: 300px; height: 300px; top: 20%; right: 10%; animation-duration: 25s; animation-delay: -10s;}
+.sup-hero-bg-shape.sup-shape4 { width: 100px; height: 100px; bottom: 10%; right: 25%; animation-duration: 15s;}
+
+@keyframes supFloatShape { /* Prefixed animation name */
+    0% { transform: translateY(0px) rotate(0deg) scale(1); }
+    50% { transform: translateY(-30px) rotate(180deg) scale(1.1); }
+    100% { transform: translateY(0px) rotate(360deg) scale(1); }
+}
+
+.sup-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    /* Animation classes like fadeInDownShort are generic, styled below or assumed global */
+}
+
+.sup-hero p.sup-subtitle { /* Prefixed */
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+.sup-search-bar { /* Prefixed */
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+.sup-search-bar input {
+    width: 100%;
+    padding: 18px 60px 18px 25px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    outline: none;
+}
+.sup-search-bar button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--sup-secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.sup-search-bar button:hover {
+    background-color: #047553;
+}
+
+
+/* --- Common Section Styling for Support Page --- */
+.sup-section { /* Prefixed */
+    padding: 80px 0;
+}
+.sup-section .container { /* Global .container */
+    max-width: 1100px;
+}
+.sup-section-title { /* Prefixed */
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--sup-dark-text);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sup-section-subtitle { /* Prefixed */
+    font-size: 1.1rem;
+    color: var(--sup-light-text);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+/* --- Quick Help / FAQ Section --- */
+.sup-quick-help-section { /* Prefixed, used with .sup-section */
+    /* Specific styles for this section wrapper if any */
+}
+.sup-quick-help-grid { /* Prefixed */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.sup-help-card { /* Prefixed */
+    background-color: var(--sup-bg-very-light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--sup-card-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid transparent;
+}
+.sup-help-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    border-top-color: var(--sup-primary-color);
+}
+.sup-help-card-icon { /* Prefixed */
+    font-size: 2.8rem;
+    color: var(--sup-primary-color);
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.sup-help-card:hover .sup-help-card-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+.sup-help-card h3 { /* Assumes h3 within .sup-help-card is specific enough */
+    font-size: 1.3rem;
+    color: var(--sup-dark-text);
+    margin-bottom: 10px;
+}
+.sup-help-card p { /* Assumes p within .sup-help-card is specific enough */
+    font-size: 0.95rem;
+    color: var(--sup-light-text);
+    line-height: 1.6;
+}
+.sup-learn-more-link { /* Prefixed */
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--sup-secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+}
+.sup-learn-more-link::after {
+    content: '\f061'; 
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-left: 8px;
+    transition: transform 0.2s ease-out;
+}
+.sup-learn-more-link:hover::after {
+    transform: translateX(5px);
+}
+
+/* --- Contact Section --- */
+.sup-contact-us-section { /* Prefixed, used with .sup-section */
+   /* Specific styles for this section wrapper if any */
+}
+.sup-contact-section-wrapper { /* Prefixed */
+    background-color: var(--sup-bg-very-light);
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    overflow: hidden; 
+}
+.sup-contact-content { /* Prefixed */
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; 
+    gap: 0; 
+}
+
+.sup-contact-info-panel { /* Prefixed */
+    background: var(--sup-primary-color);
+    color: #fff;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sup-contact-info-panel h2 { 
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+.sup-contact-info-panel p {
+    opacity: 0.9;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.sup-contact-detail { /* Prefixed */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Animation classes are generic utilities */
+}
+.sup-contact-detail i {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    width: 30px; 
+    text-align: center;
+}
+.sup-contact-detail span {
+    font-size: 1rem;
+}
+.sup-contact-detail a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+.sup-contact-detail a:hover {
+    opacity: 0.8;
+}
+.sup-contact-socials { /* Prefixed */
+    margin-top: 20px;
+}
+.sup-contact-socials a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.sup-contact-socials a:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.sup-contact-form-panel { /* Prefixed */
+    padding: 50px 40px;
+}
+.sup-contact-form-panel h2 {
+    font-size: 2rem;
+    color: var(--sup-dark-text);
+    margin-bottom: 30px;
+    text-align: left;
+}
+.sup-form-group { /* Prefixed */
+    margin-bottom: 25px;
+}
+.sup-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--sup-dark-text);
+}
+.sup-form-group input,
+.sup-form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--sup-input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--sup-bg-light);
+}
+.sup-form-group input:focus,
+.sup-form-group textarea:focus {
+    outline: none;
+    border-color: var(--sup-primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+.sup-form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.sup-submit-button { /* Prefixed */
+    background-color: var(--sup-secondary-color);
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.2);
+}
+.sup-submit-button:hover {
+    background-color: #047553;
+    transform: translateY(-2px);
+}
+
+/* Animation Keyframes (Generic utility names are usually fine if definitions are scoped or not conflicting) */
+/* If these names conflict with index.css, prefix them too (e.g., @keyframes supFadeInDownShort) */
+@keyframes fadeInDownShort {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUpShort {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeftShort { /* Added for contact info details */
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+/* For elements with .animate-on-scroll and .pop-in */
+.sup-help-card.pop-in.is-visible {
+    animation: supPopIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+@keyframes supPopIn {
+    0% { opacity: 0; transform: scale(0.7); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Animation classes for elements with .animate-on-scroll */
+.animate-on-scroll.fade-in-up.is-visible {
+    animation: fadeInUpShort 0.6s ease-out forwards;
+}
+.animate-on-scroll.fade-in-down.is-visible { /* If you use this class */
+    animation: fadeInDownShort 0.6s ease-out forwards;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .sup-hero h1 { font-size: 2.8rem; }
+    .sup-hero p.sup-subtitle { font-size: 1.15rem; }
+    .sup-contact-content {
+        grid-template-columns: 1fr;
+    }
+    .sup-contact-info-panel {
+        text-align: center;
+        border-radius: 15px 15px 0 0;
+    }
+    .sup-contact-info-panel .sup-contact-detail {
+        justify-content: center;
+    }
+    .sup-contact-form-panel {
+        border-radius: 0 0 15px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sup-hero { padding-top: calc(var(--sp-overlay-header-height, 70px) + 40px); padding-bottom: 80px;}
+    .sup-section-title { font-size: 2.2rem; }
+    .sup-section-subtitle { font-size: 1rem; }
+    .sup-quick-help-grid { grid-template-columns: 1fr; }
+    .sup-contact-info-panel, .sup-contact-form-panel { padding: 40px 30px; }
+}
+
+@media (max-width: 480px) {
+    .sup-hero { 
+        padding-top: calc(var(--sp-overlay-header-height, 60px) + 30px); /* Adjust for smaller header */
+    }
+    .sup-hero h1 { font-size: 2.2rem; }
+    .sup-hero p.sup-subtitle { font-size: 1rem; }
+    .sup-search-bar input { padding: 15px 50px 15px 20px; }
+    .sup-search-bar button { width: 40px; height: 40px; }
+    .sup-section-title { font-size: 1.8rem; }
+    .sup-help-card, .sup-contact-info-panel, .sup-contact-form-panel { padding: 30px 20px; }
+}

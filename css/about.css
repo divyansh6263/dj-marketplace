@@ -1,0 +1,344 @@
+/* css/about.css */
+
+:root {
+    /* Prefixed CSS Variables for about page specifics */
+    --ab-primary-color: #059669; 
+    --ab-secondary-color: #0A4D68; 
+    --ab-text-color: #333;
+    --ab-light-bg: #f8f9fa;
+    --ab-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    /* Assuming sp-overlay-header-height is defined in sell.css or index.css globally */
+    /* If not, define it here or ensure sell.css is loaded before about.css */
+    /* --sp-overlay-header-height: 80px; Example if it's not global */
+}
+
+body.ab-page { /* Prefixed body class */
+    font-family: 'Poppins', sans-serif;
+    color: var(--ab-text-color);
+    line-height: 1.7;
+}
+
+/* Hero Section */
+.ab-hero { /* Prefixed */
+    background: linear-gradient(135deg, var(--ab-secondary-color) 0%, var(--ab-primary-color) 100%);
+    color: #fff;
+    /* 
+      IMPORTANT FIX FOR OVERLAP:
+      Adjust padding-top to account for the overlay header's height.
+      var(--sp-overlay-header-height) should be defined in your global styles (e.g., index.css or sell.css).
+      If it's not, provide a fallback like 80px (adjust to your actual header height).
+      The additional 40px-60px is for visual spacing between header and hero content.
+    */
+    padding-top: calc(var(--sp-overlay-header-height, 80px) + 50px); 
+    padding-bottom: 80px;
+    /* .container inside will handle side padding, or add here:
+    padding-left: 20px; 
+    padding-right: 20px; */
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+.ab-hero::before, /* Prefixed (if these shapes are specific to ab-hero) */
+.ab-hero::after { 
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    animation: pulseShape 15s infinite alternate;
+}
+
+.ab-hero::before {
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    top: -100px;
+    left: -100px;
+}
+
+.ab-hero::after {
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    bottom: -150px;
+    right: -150px;
+    animation-delay: 2s;
+}
+
+/* pulseShape keyframes can remain as is, it's used by ab-hero shapes */
+@keyframes pulseShape {
+    0% { transform: scale(0.8) rotate(0deg); }
+    100% { transform: scale(1.2) rotate(45deg); }
+}
+
+.ab-hero .container { /* This uses the global .container, styling comes from index.css */
+    position: relative; 
+    z-index: 2;
+}
+
+.ab-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    animation: fadeInUp 0.8s ease-out; /* fadeInUp can be a global animation */
+}
+
+.ab-hero .ab-tagline { /* Prefixed */
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Common Section Styling for About Page */
+.ab-section { /* Prefixed */
+    padding: 80px 0;
+}
+
+.ab-section .container { /* Global .container */
+    max-width: 960px; 
+}
+
+.ab-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--ab-secondary-color);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+.ab-section h2::after { 
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--ab-primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.ab-section p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Mission Section Specifics */
+.ab-mission-section { /* Prefixed, used with .ab-section */
+    background-color: var(--ab-light-bg);
+}
+.ab-mission-section p { /* More specific selector if needed */
+    text-align: center;
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--ab-text-color);
+}
+
+/* What We Offer Section Specifics */
+.ab-offer-section { /* Prefixed, used with .ab-section */
+    /* any specific styles for the offer section wrapper itself */
+}
+
+.ab-offer-grid { /* Prefixed */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.ab-offer-card { /* Prefixed */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--ab-card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--ab-primary-color);
+}
+
+.ab-offer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.ab-offer-card h3 {
+    font-size: 1.5rem;
+    color: var(--ab-secondary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.ab-offer-card h3 i {
+    margin-right: 12px;
+    color: var(--ab-primary-color);
+    font-size: 1.8rem;
+}
+
+/* Values Section Specifics */
+.ab-values-section { /* Prefixed, used with .ab-section */
+    background-color: var(--ab-light-bg);
+}
+.ab-values-grid { /* Prefixed */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.ab-value-card { /* Prefixed */
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--ab-card-shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.ab-value-card:hover {
+    transform: scale(1.05);
+    background-color: var(--ab-secondary-color);
+    color: #fff;
+}
+.ab-value-card:hover .ab-value-icon i, /* Prefixed */
+.ab-value-card:hover h3,
+.ab-value-card:hover p {
+    color: #fff;
+}
+.ab-value-card:hover .ab-value-icon { /* Prefixed */
+    background-color: rgba(255,255,255,0.15);
+}
+
+
+.ab-value-icon { /* Prefixed */
+    font-size: 2.5rem;
+    color: var(--ab-primary-color);
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    background-color: #e9f5f1; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ab-value-card h3 {
+    font-size: 1.3rem;
+    color: var(--ab-secondary-color);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+.ab-value-card p {
+    font-size: 0.95rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+/* Animation Classes (These are utility classes, can remain generic unless they specifically conflict) */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in { /* Generic animation */
+    opacity: 0;
+}
+.fade-in.is-visible {
+    opacity: 1;
+}
+
+.fade-in-up { /* Generic animation */
+    opacity: 0;
+    transform: translateY(30px);
+}
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left { /* Generic animation */
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.slide-in-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right { /* Generic animation */
+    opacity: 0;
+    transform: translateX(50px);
+}
+.slide-in-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.popIn { /* Generic animation, used by data-attribute */
+    /* animation definition is fine here if not defined globally */
+}
+.popIn.is-visible { /* This is if you add .popIn directly with JS */
+    animation: popInKeyframe 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+/* Or apply the animation directly to the card when .is-visible is added and data-animation="popIn" */
+.ab-offer-card.is-visible[data-animation="popIn"], 
+.ab-value-card.is-visible[data-animation="popIn"] {
+    animation: popInKeyframe 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+
+@keyframes popInKeyframe { /* Renamed to avoid conflict if 'popIn' is too generic */
+    0% { opacity: 0; transform: scale(0.7); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+/* Keyframe for initial hero text animation */
+@keyframes fadeInUp { /* This is a common animation name, ensure it's not conflicting or make it ab-fadeInUp */
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+    .ab-hero h1 { font-size: 3rem; }
+    .ab-hero .ab-tagline { font-size: 1.3rem; }
+    .ab-section h2 { font-size: 2.4rem; }
+}
+
+@media (max-width: 768px) {
+    .ab-hero { 
+      padding-top: calc(var(--sp-overlay-header-height, 70px) + 40px); /* Adjust for potentially smaller header on mobile */
+      padding-bottom: 60px; 
+    }
+    .ab-hero h1 { font-size: 2.5rem; }
+    .ab-hero .ab-tagline { font-size: 1.1rem; }
+    .ab-section { padding: 60px 0; }
+    .ab-section h2 { font-size: 2rem; }
+
+    .ab-offer-grid { grid-template-columns: 1fr; }
+    .ab-values-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}
+
+@media (max-width: 480px) {
+    .ab-hero {
+        padding-top: calc(var(--sp-overlay-header-height, 60px) + 30px); /* Adjust for potentially smaller header on mobile */
+    }
+    .ab-hero h1 { font-size: 2rem; }
+    .ab-hero .ab-tagline { font-size: 1rem; }
+    .ab-section h2 { font-size: 1.8rem; }
+    .ab-value-card { padding: 25px 20px; }
+    .ab-value-icon { font-size: 2rem; width: 60px; height: 60px; line-height: 60px;}
+}
